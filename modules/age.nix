@@ -115,6 +115,6 @@ in
     system.activationScripts.users.deps = [ "agenixRoot" ];
 
     # Other secrets need to wait for users and groups to exist.
-    system.activationScripts.agenix = stringAfter [ "users" "groups" "specialfs" ] installNonRootSecrets; // { supportsDryActivation = false; };
+    system.activationScripts.agenix = stringAfter [ "users" "groups" "specialfs" ] installNonRootSecrets // { supportsDryActivation = false; };
   };
 }
